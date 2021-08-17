@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- ... -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/tailwind.css" rel="stylesheet" />
+    <link href="/style.css" rel="stylesheet" />
+
+  </head>
+  <body class="bg-blue-400">
+    <!-- start question -->
+    <section class="start ">
+      <div class="container items-center px-5 py-12 lg:px-20">
+        <div class="flex flex-wrap">
+          <div class="w-96 mx-auto my-4 bg-white border rounded-lg shadow-xl">
+            <div class="p-6">
+              <h4 class="text-2xl font-semibold leading-none tracking-tighter text-gray-600 text-center lg:text-3xl title-font">Main Tebakan yuk!!</h4>
+              <h2 class="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase title-font">Joke bapak-bapak</h2>
+              <div class="container items-center px-2">
+                <div class="border-2 rounded-t-lg border-gray-100 p-5 mt-2 text-gray-500">
+                  <p>🤝Klik Start</p>
+                  <p>⚠️jawaban dengan huruf Kecil</p>
+                  <p>🧩 Kerjakan <span class="kerjakan"></span> Soal</p>
+                  <p>✔️Result</p>
+                </div>
+                <div class="flex flex-col w-full p-2 mx-auto transition duration-500 ease-in-out transform bg-white">
+                  <button onclick="startkuis()"
+                    class="
+                      w-full
+                      px-16
+                      py-2
+                      my-2
+                      mr-2
+                      text-base text-white
+                      transition
+                      duration-500
+                      ease-in-out
+                      transform
+                      bg-blue-600
+                      border-blue-600
+                      rounded-md
+                      focus:shadow-outline focus:outline-none focus:ring-2
+                      ring-offset-current ring-offset-2
+                      hover:bg-blue-800
+                    "
+                  >
+                    Start
+                  </button>
+                  <hr />
+                  <p class="text-xs font-light text-center">Create with ❤️ by Taufik</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ./start question -->
+
+    <!-- joke questions -->
+    <section class="now hidden">
+      <div class="container items-center px-5 py-12 lg:px-20">
+        <div class="flex flex-wrap">
+          <div class="w-96 mx-auto my-4 bg-white border rounded-lg shadow-xl">
+            <div class="p-6">
+              <h2 id="nomor-kuis" class="nomor-kuis mb-8 text-xs font-semibold tracking-widest text-black uppercase title-font"></h2>
+              <h4 id="text-kuis" class="text-kuis mb-4 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl title-font"></h4>
+              <div class="container items-center px-2">
+                <div class="flex flex-col w-full p-2 mx-auto transition duration-500 ease-in-out transform bg-white">
+                  <div class="relative mt-4">
+                    <label for="name" class="text-base leading-7 text-gray-500 font-sans font-semibold">Jawab :</label>
+                    <input
+                      type="text"
+                      id="jwb"
+                      name="jwb"
+                      placeholder=""
+                      class=" w-full bg-blue-100 px-4 py-2 mt-2 transition duration-500 ease-in-out transform border-transparent rounded-lg focus:border-blue-300 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2"
+                    />
+                  </div>
+                  <button id="sudah" onclick="add()" 
+                    class=" 
+                      sudah
+                      w-full
+                      px-16
+                      py-2
+                      my-2
+                      mr-2
+                      text-base text-white
+                      transition
+                      duration-500
+                      ease-in-out
+                      transform
+                      bg-blue-600
+                      border-blue-600
+                      rounded-md
+                      focus:shadow-outline focus:outline-none focus:ring-2
+                      ring-offset-current ring-offset-2
+                      hover:bg-blue-800
+                    "
+                  >
+                    Kirim
+                  </button>
+                  <hr />
+                  <div class="flex mt-2 justify-between">
+                    <div class="flex">
+                      <div class="buletIndicator ">
+
+                      </div>
+                
+                    
+                    </div>
+                    <button class="text-blue-400 font-bold" type="button" onclick="next()">Next &nbsp; »</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ./joks questions -->
+    <!-- result -->
+    <section class="result hidden">
+      <div class="container items-center px-5 py-12 lg:px-20">
+        <div class="flex flex-wrap">
+          <div class="w-96 mx-auto my-4 bg-white border rounded-lg shadow-xl">
+            <div class="p-6">
+              <h4 class="text-2xl font-semibold leading-none tracking-tighter text-gray-600 text-center lg:text-3xl title-font">Result</h4>
+              <h2 class="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase title-font">Joke bapak-bapak</h2>
+              <div class="container items-center px-2">
+                <div >
+                    <div class="border-2 rounded-lg border-gray-100  mt-2 text-gray-500">
+                  <table class="w-full">
+                    <tr  >
+                      <td class=" border-b-2 border-r-2 border-gray-100 pl-4" >Total Soal</td>
+                      <td class="total-soal border-b-2 border-gray-100 text-center"></td>
+                    </tr>
+                    <tr>
+                      <td  class="border-b-2 border-r-2 border-gray-100 pl-4">Attempt</td>
+                      <td class="attempt border-b-2 border-gray-100 text-center"></td>
+                    </tr>
+                    <tr>
+                      <td  class="border-b-2 border-r-2 border-gray-100 pl-4">Benar</td>
+                      <td class="benar border-b-2 border-gray-100 text-center"></td>
+                    </tr>
+                    <tr>
+                      <td  class="border-b-2 border-r-2 border-gray-100 pl-4">Salah</td>
+                      <td class="salah border-b-2 border-gray-100 text-center"></td>
+                    </tr>
+                    <tr>
+                      <td  class="border-b-2 border-r-2 border-gray-100 pl-4">Win rate</td>
+                      <td class="persentase border-b-2 border-gray-100 text-center"></td>
+                    </tr>
+                    <tr>
+                      <td  class="border-r-2 border-gray-100 pl-4">Score</td>
+                      <td class="score border-gray-100 text-center"></td>
+                    </tr>
+                  </table>
+                 </div>
+                <div class="flex flex-col w-full p-2 mx-auto transition duration-500 ease-in-out transform bg-white">
+                  <div class="flex justify-around">
+                    <button onclick="TryAgain()"
+                      class="
+                        py-2
+                        px-5
+                        my-2
+                        mr-2
+                        text-base text-white
+                        transition
+                        duration-500
+                        ease-in-out
+                        transform
+                        bg-blue-400
+                        border-blue-400
+                        rounded-md
+                        focus:shadow-outline focus:outline-none focus:ring-2
+                        ring-offset-current ring-offset-2
+                        hover:bg-blue-500
+                      "
+                    >
+                      Try Again
+                    </button>
+                    <button onclick="Home()"
+                      class="
+                        py-2
+                        px-7
+                        my-2
+                        mr-2
+                        text-base text-white
+                        transition
+                        duration-500
+                        ease-in-out
+                        transform
+                        bg-blue-400
+                        border-blue-400
+                        rounded-md
+                        focus:shadow-outline focus:outline-none focus:ring-2
+                        ring-offset-current ring-offset-2
+                        hover:bg-blue-500
+                      "
+                    >
+                      Home
+                    </button>
+                  </div>
+
+                  <hr />
+                  <p class="text-xs font-light text-center">Create with ❤️ by Taufik</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ./result -->
+
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
