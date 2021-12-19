@@ -44,7 +44,7 @@ let jwbbenar = 0;
 let attempt = 0;
 
 function setKuisTersedia() {
-  const totalKuis = limitKuis;
+  const totalKuis = soal.length;
   for (let i = 0; i < totalKuis; i++) {
     kuisTersedia.push(soal[i]);
   }
