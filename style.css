@@ -1,8 +1,8 @@
-.disable{
+.disable {
     background-color: rgb(135, 191, 240);
     pointer-events: none;
 }
-.buletIndicator div{
+.buletIndicator div {
     height: 20px;
     width: 20px;
     display: inline-block;
@@ -11,23 +11,35 @@
     margin-right: 3px;
     margin-top: 10px;
 }
-.buletIndicator div.benar{
- background-color: rgba(82, 250, 199, 0.808);
+.buletIndicator div.benar {
+    background-color: rgba(82, 250, 199, 0.808);
 }
-.buletIndicator div.salah{
- background-color: rgb(196, 111, 111);
+.buletIndicator div.salah {
+    background-color: rgb(196, 111, 111);
 }
 
-section{
+section {
     animation: meluncur 1s ease;
 }
-@keyframes meluncur{
-    0%{
+@keyframes meluncur {
+    0% {
         transform: translateX(40px);
         opacity: 0;
     }
-    100%{
+    100% {
         transform: translatex(0);
         opacity: 1;
     }
+}
+#context-menu {
+    position: fixed;
+    z-index: 1000000;
+    background: #fff;
+    border-radius: 7px;
+    transform: scale(0);
+    transform-origin: top left;
+}
+#context-menu.active {
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
 }
