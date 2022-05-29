@@ -10,6 +10,58 @@ window.addEventListener("click", function () {
         .getElementById("context-menu")
         .classList.remove("active");
 });
+
+//disable shortcut nyari ini ya pak???
+document.onkeydown = function (e) {
+    if (event.keyCode == 123) {
+        return false;
+    }
+    if (
+        (e.ctrlKey || e.metaKey) &&
+        e.shiftKey &&
+        e.keyCode == "I".charCodeAt(0)
+    ) {
+        return false;
+    }
+    if (
+        (e.ctrlKey || e.metaKey) &&
+        e.shiftKey &&
+        e.keyCode == "C".charCodeAt(0)
+    ) {
+        return false;
+    }
+    if (
+        (e.ctrlKey || e.metaKey) &&
+        e.shiftKey &&
+        e.keyCode == "J".charCodeAt(0)
+    ) {
+        return false;
+    }
+    if (
+        (e.ctrlKey || e.metaKey) &&
+        e.shiftKey &&
+        e.keyCode == "U".charCodeAt(0)
+    ) {
+        return false;
+    }
+    if (
+        (e.ctrlKey || e.metaKey) &&
+        e.shiftKey &&
+        e.keyCode == "M".charCodeAt(0)
+    ) {
+        return false;
+    }
+    if ((e.ctrlKey || e.metaKey) && e.keyCode == "M".charCodeAt(0)) {
+        return false;
+    }
+    if ((e.ctrlKey || e.metaKey) && e.keyCode == "I".charCodeAt(0)) {
+        return false;
+    }
+    if (e.keyCode == "F12" || "f12".charCodeAt(0)) {
+        return false;
+    }
+};
+
 let soal = [
     {
         s: "Ditutup jadi tongkat, dibuka jadi tenda. Apakah itu?",
