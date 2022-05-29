@@ -13,9 +13,10 @@ window.addEventListener("click", function () {
 
 //disable shortcut nyari ini ya pak???
 document.onkeydown = function (e) {
-    if (event.keyCode == 123) {
+    if (e.keyCode == 123) {
         return false;
     }
+
     if (
         (e.ctrlKey || e.metaKey) &&
         e.shiftKey &&
@@ -55,9 +56,6 @@ document.onkeydown = function (e) {
         return false;
     }
     if ((e.ctrlKey || e.metaKey) && e.keyCode == "I".charCodeAt(0)) {
-        return false;
-    }
-    if (e.keyCode == "F12" || "f12".charCodeAt(0)) {
         return false;
     }
 };
@@ -138,8 +136,8 @@ function getNewQuestion() {
 function add() {
     // ambil nilai dari text
     let jwb = document.getElementById("jwb");
-
-    if (jwb.value === kuisSekarang.answer) {
+    console.log(jwb);
+    if (jwb.value.toLowerCase() === kuisSekarang.answer) {
         updateJwbIndicator("benar");
         jwbbenar++;
         console.log("benar : " + jwbbenar);
